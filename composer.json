@@ -4,9 +4,16 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories":
+    [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hatem93/analogue.git"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
-        "Analogue/ORM": "~5.2",
+        "Analogue/ORM": "dev-bigpoint-fix2",
         "laravel/framework": "5.3.*",
         "mbezhanov/faker-provider-collection": "^1.2",
         "tymon/jwt-auth": "0.5.*"

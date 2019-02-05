@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use App\Helpers\ResponseObject;
+use Illuminate\Support\Facades\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -65,6 +66,7 @@ class Handler extends ExceptionHandler
     }
 
     public function handleException($exception){
+        dd($exception);
         $response = new ResponseObject();
         if($exception instanceof BadRequestException){
 

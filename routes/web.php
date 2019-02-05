@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('login','Accounts\UserController@login');
+Route::post('user/add','Accounts\UserController@addItem');
+Route::get('user/items','Accounts\UserController@getUserItems');
+Route::get('user/notaddeditems','Accounts\UserController@getNonUserItems');

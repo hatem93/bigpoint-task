@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Analogue;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->app->make('analogue');
+        Analogue::registerPlugin('Analogue\ORM\Plugins\Timestamps\TimestampsPlugin');
+        Analogue::registerPlugin('Analogue\ORM\Plugins\SoftDeletes\SoftDeletesPlugin');
     }
 
     /**
@@ -24,5 +28,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind('App\ApplicationLayer\Accounts\Interfaces\IAccountMainService', 'App\ApplicationLayer\Accounts\AccountMainService');
+        $this->app->bind('App\ApplicationLayer\Items\Interfaces\IItemMainService', 'App\ApplicationLayer\Items\ItemMainService');
+        
+
+        $this->app->bind('App\DomainModelLayer\Accounts\Repositories\IAccountMainRepository', 'App\Infrastructure\Accounts\AccountMainRepository');
+        $this->app->bind('App\DomainModelLayer\Items\Repositories\IItemMainRepository', 'App\Infrastructure\Items\ItemMainRepository');
     }
 }
