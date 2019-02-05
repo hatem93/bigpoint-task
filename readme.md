@@ -1,6 +1,6 @@
 # BigPoint Task - PHP Payment Position
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-This Repos is the implementation for the following task for php payment postion
+
+This Repo is the implementation for the following task for php payment postion
 The requirements where to implement the following in php.
 
   - as a customer, I want to add an item into the basket
